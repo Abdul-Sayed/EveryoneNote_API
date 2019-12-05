@@ -1,30 +1,35 @@
-README: Rails Backend
-=====================
+# lazy_Chef_API
 
-## Setup
+Back End for [EveryoneNote](https://github.com/Abdul-Sayed/EveryoneNote)
 
-```sh
-# from within this directory:
-bundle install
-rails db:create db:migrate db:seed
-rails s
-```
+[Live Demo](https://everyonenote.surge.sh/)
 
-Your Rails backend API will be running on `http://localhost:3000`.
+<img src="https://i.ibb.co/fFZcsKb/evernote.png" alt="evernote" border="0">
 
-## User ID
+## Technologies/Frameworks used
 
-The seed file should create one user for you, so your default `USER_ID` should be `1`. If that doesn't work, debug it with the `/api/v1/users` route as shown below.
+Built with Ruby on Rails
 
-## Routes
+- Ruby 2.6.1
+- Rails 6.0.1
 
-| Method | Route               | Headers                                                              | Body                 |
-| ------ | ------------------- |:--------------------------------------------------------------------:|:--------------------:|
-| GET    | `/api/v1/users`     |                                                                      |                      |
-| GET    | `/api/v1/notes`     |                                                                      |                      |
-| POST   | `/api/v1/notes`     | `'Content-Type': 'application/json'`<br/>`'Accept': 'application/json'` | title, body, user_id |
-| PATCH  | `/api/v1/notes/:id` | `'Content-Type': 'application/json'`<br/>`'Accept': 'application/json'` | title, body, user_id |
+Features the ActiveRecord models user:`has_many :notes` and note: `belongs_to :user`.
 
-*Tips:*
-* Test out your routes with [Postman](https://www.getpostman.com/) to see how they work and what they return.
-* Look at the source code! There are many more routes that are not listed that may make your life easier. Use those development skills and hack the code!
+Utilizes the bcrypt and JWT gems for Authentication/Authorization. Saves to a PostgreSQL database.
+
+### Getting Started
+
+#### Installing
+
+Clone down the repo
+
+`bundle install`
+
+#### Deployed App
+
+Backend deployed on [Heroku](heroku.com)
+Frontend deployed on [Surge](https://everyonenote.surge.sh/)
+
+### Authors
+
+[Abdul Sayed](https://www.linkedin.com/in/abdul-sayed-engr/)
